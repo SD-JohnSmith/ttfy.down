@@ -1,307 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TTFY.DOWN | Tải Video Không Logo</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
-        * { font-family: 'Inter', sans-serif; }
-        body {
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3f 50%, #0f0f23 100%);
-            min-height: 100vh;
-        }
-        .glass {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, #6366f1, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .btn-primary {
-            background: linear-gradient(90deg, #6366f1, #8b5cf6);
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
-        }
-        .input-field:focus {
-            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5);
-        }
-        .loader {
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            border-top: 3px solid #6366f1;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .fade-in {
-            animation: fadeIn 0.5s ease forwards;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f8fc">
+<title>TTFY.DOWN – Tải video</title>
+<style>
+:root{--ink:#172033;--muted:#68738a;--line:#e5e9f2;--blue:#5367e8;--blue2:#7959e8;--bg:#f7f8fc;--card:#fff;--soft:#f0f3ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit}.wrap{width:min(1050px,calc(100% - 32px));margin:auto}
+header{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;position:sticky;top:0;z-index:5}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-size:22px;font-weight:850;letter-spacing:-.7px;text-decoration:none}.brand b{color:var(--blue)}.navlinks{display:flex;gap:24px;color:var(--muted);font-size:14px}.navlinks a{text-decoration:none}.navlinks a:hover{color:var(--blue)}
+.hero{text-align:center;padding:58px 0 28px}.eyebrow{display:inline-block;background:#e9edff;color:#4356d4;border-radius:99px;padding:5px 12px;font-size:13px;font-weight:700}.hero h1{font-size:clamp(30px,5vw,46px);line-height:1.12;letter-spacing:-1.5px;margin:17px 0 12px}.hero p{color:var(--muted);max-width:640px;margin:0 auto}
+.ad{min-height:90px;border:1px dashed #cbd2e2;border-radius:14px;background:#fff;color:#9aa3b5;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;letter-spacing:.4px;margin:24px auto;padding:12px}
+.main-card{max-width:760px;margin:28px auto 24px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(18px,4vw,32px);box-shadow:0 14px 40px rgba(29,42,82,.06)}
+.platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px}.platform{border:1px solid var(--line);background:#fff;border-radius:13px;padding:13px 8px;cursor:pointer;font:inherit;font-weight:700;color:var(--muted);transition:.15s}.platform span{display:block;font-size:22px;margin-bottom:3px}.platform[aria-pressed=true]{border-color:var(--blue);background:var(--soft);color:#394bc5;box-shadow:0 0 0 2px #5367e81a}
+.label{display:block;font-weight:750;font-size:14px;margin:0 0 8px}.urlrow{display:flex;gap:9px}.urlrow input{min-width:0;flex:1;border:1px solid #dce2ee;border-radius:12px;padding:15px 14px;font:inherit;outline:none}.urlrow input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #5367e81c}.paste{border:1px solid var(--line);background:#f6f7fb;border-radius:12px;padding:0 15px;font-weight:700;cursor:pointer;color:#46516a}
+.options{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin:18px 0 20px;color:var(--muted);font-size:14px}.options label{display:flex;align-items:center;gap:7px}.options select{border:1px solid var(--line);border-radius:9px;padding:8px;background:white;color:var(--ink);font:inherit}
+.primary{width:100%;border:0;border-radius:13px;padding:16px;background:linear-gradient(110deg,var(--blue),var(--blue2));color:white;font:inherit;font-weight:800;font-size:16px;cursor:pointer}.primary:hover{filter:brightness(1.04)}.primary:disabled{opacity:.6;cursor:wait}
+.notice{margin:14px 0 0;padding:12px 14px;border-radius:11px;background:#f7f8fc;color:var(--muted);font-size:13px}.status{display:none;margin-top:14px;padding:13px;border-radius:11px;background:#fff8e8;color:#795510;font-size:14px}.status.show{display:block}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0}.feature{background:white;border:1px solid var(--line);border-radius:16px;padding:18px}.feature .ico{font-size:23px}.feature h3{margin:7px 0 4px;font-size:16px}.feature p{margin:0;color:var(--muted);font-size:13px}
+.section{margin:38px 0}.section h2{font-size:23px;letter-spacing:-.5px}.section p,.section li{color:var(--muted)}.faq{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin:10px 0}.faq strong{display:block;margin-bottom:4px}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:13px}.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:650px){.navlinks{gap:12px;font-size:12px}.hero{padding-top:42px}.platforms{gap:7px}.platform{font-size:13px;padding:10px 4px}.urlrow{flex-direction:column}.paste{padding:12px}.features{grid-template-columns:1fr}.ad{min-height:76px}}
+</style>
 </head>
-<body class="text-white">
-    <!-- Header -->
-    <header class="py-6 px-4 sm:px-6 lg:px-8">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold tracking-tight">
-                <span class="gradient-text">TTFY.DOWN</span>
-            </h1>
-            <nav class="hidden md:flex gap-8">
-                <a href="#" class="text-gray-300 hover:text-white transition-colors">Trang Chủ</a>
-                <a href="#guide" class="text-gray-300 hover:text-white transition-colors">Hướng Dẫn</a>
-                <a href="#about" class="text-gray-300 hover:text-white transition-colors">Về Chúng Tôi</a>
-            </nav>
-        </div>
-    </header>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#">🔗 <b>TTFY.DOWN</b></a>
+  <nav class="navlinks"><a href="#features">Tính năng</a><a href="#guide">Hướng dẫn</a><a href="#about">Giới thiệu</a></nav>
+</div></header>
+<main class="wrap">
+  <section class="hero">
+    <span class="eyebrow">NHANH · ĐƠN GIẢN · DỄ DÙNG</span>
+    <h1>Tải video đa nền tảng</h1>
+    <p>Dán liên kết TikTok, Facebook hoặc YouTube để xem các tùy chọn được hỗ trợ. Chỉ xử lý nội dung bạn sở hữu hoặc được phép sử dụng.</p>
+  </section>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-12 max-w-4xl">
-        <div class="text-center mb-10 fade-in">
-            <h2 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4">
-                Tải Video <span class="gradient-text">Không Logo</span>
-            </h2>
-            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-                Dễ dàng tải video từ TikTok (không watermark). Chỉ cần dán link bên dưới!
-            </p>
-        </div>
+  <div class="ad" aria-label="Vị trí quảng cáo">VỊ TRÍ QUẢNG CÁO 1 · 728 × 90 (có thể thay bằng mã quảng cáo sau)</div>
 
-        <!-- Download Form -->
-        <div class="glass rounded-2xl p-8 shadow-2xl mb-12 fade-in">
-            <div class="space-y-6">
-                <div class="relative">
-                    <input 
-                        type="text" 
-                        id="videoLink" 
-                        placeholder="Dán link TikTok hoặc YouTube vào đây..."
-                        class="input-field w-full px-6 py-4 rounded-xl bg-white/5 border border-white/10 focus:outline-none text-lg transition-all"
-                    >
-                    <button 
-                        id="pasteBtn"
-                        class="absolute right-3 top-1/2 -translate-y-1/2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-sm transition-colors"
-                    >
-                        <i class="fa fa-paste mr-1"></i> Dán
-                    </button>
-                </div>
+  <section class="main-card" aria-label="Công cụ liên kết video">
+    <div class="platforms" role="group" aria-label="Chọn nền tảng">
+      <button class="platform" data-platform="tiktok" aria-pressed="true"><span>♪</span>TikTok</button>
+      <button class="platform" data-platform="facebook" aria-pressed="false"><span>ⓕ</span>Facebook</button>
+      <button class="platform" data-platform="youtube" aria-pressed="false"><span>▶</span>YouTube</button>
+    </div>
+    <label class="label" for="videoUrl">Dán liên kết video tại đây</label>
+    <div class="urlrow">
+      <input id="videoUrl" type="url" placeholder="https://..." autocomplete="url">
+      <button class="paste" id="pasteBtn" type="button">Dán liên kết</button>
+    </div>
+    <div class="options">
+      <label><input type="radio" name="kind" value="video" checked> Video</label>
+      <label><input type="radio" name="kind" value="audio"> Âm thanh (nếu được hỗ trợ)</label>
+      <label>Chất lượng
+        <select id="quality"><option value="best">Tốt nhất có sẵn</option><option value="1080">1080p</option><option value="720">720p</option><option value="480">480p</option></select>
+      </label>
+    </div>
+    <button class="primary" id="submitBtn" type="button">Kiểm tra liên kết</button>
+    <div class="notice">Lưu ý: giao diện mẫu chưa tự tải video. Cần kết nối máy chủ/API hợp lệ trước khi chức năng xử lý hoạt động.</div>
+    <div class="status" id="status" role="status"></div>
+  </section>
 
-                <!-- Chọn định dạng -->
-                <div class="flex flex-wrap gap-4">
-                    <label class="flex items-center gap-2 cursor-pointer">
-                        <input type="radio" name="format" value="mp4" checked class="accent-indigo-500">
-                        <span>Video (MP4)</span>
-                    </label>
-                    <label class="flex items-center gap-2 cursor-pointer">
-                        <input type="radio" name="format" value="mp3" class="accent-indigo-500">
-                        <span>Chỉ Âm thanh (MP3)</span>
-                    </label>
-                </div>
+  <div class="ad" aria-label="Vị trí quảng cáo">VỊ TRÍ QUẢNG CÁO 2 · KHU VỰC NỘI DUNG</div>
 
-                <button 
-                    id="downloadBtn"
-                    class="btn-primary w-full py-4 rounded-xl text-lg font-semibold flex items-center justify-center gap-2"
-                >
-                    <i class="fa fa-download"></i>
-                    <span>Lấy Link Tải</span>
-                </button>
-            </div>
+  <section id="features" class="features">
+    <article class="feature"><div class="ico">🧭</div><h3>Dễ sử dụng</h3><p>Chọn nền tảng, dán liên kết và làm theo hướng dẫn.</p></article>
+    <article class="feature"><div class="ico">📱</div><h3>Thân thiện di động</h3><p>Bố cục tự điều chỉnh cho điện thoại, máy tính bảng và laptop.</p></article>
+    <article class="feature"><div class="ico">🔒</div><h3>Ưu tiên an toàn</h3><p>Không yêu cầu mật khẩu mạng xã hội hoặc thông tin đăng nhập của bạn.</p></article>
+  </section>
 
-            <!-- Status Area -->
-            <div id="statusArea" class="mt-8 hidden">
-                <div class="flex items-center justify-center gap-3 text-gray-300">
-                    <div class="loader"></div>
-                    <span id="statusText">Đang xử lý...</span>
-                </div>
-            </div>
+  <section id="guide" class="section">
+    <h2>Cách sử dụng</h2>
+    <ol><li>Chọn TikTok, Facebook hoặc YouTube.</li><li>Sao chép liên kết của nội dung bạn có quyền sử dụng.</li><li>Dán liên kết và nhấn “Kiểm tra liên kết”.</li><li>Nếu nền tảng/API hỗ trợ, làm theo tùy chọn được máy chủ trả về.</li></ol>
+  </section>
 
-            <!-- Result Area -->
-            <div id="resultArea" class="mt-8 hidden fade-in">
-                <div class="bg-green-500/10 border border-green-500/30 rounded-xl p-6">
-                    <h3 class="text-lg font-semibold text-green-400 mb-4">
-                        <i class="fa fa-check-circle mr-2"></i>Thành công!
-                    </h3>
-                    <div class="space-y-3">
-                        <p id="videoTitle" class="text-sm text-gray-300 font-medium"></p>
-                        <a 
-                            href="#" 
-                            id="realDownloadBtn"
-                            class="inline-block w-full text-center py-3 bg-green-600 hover:bg-green-700 rounded-lg font-medium transition-colors"
-                            target="_blank"
-                        >
-                            <i class="fa fa-download mr-2"></i>Mở Trang Tải Video
-                        </a>
-                        <p class="text-xs text-gray-400 mt-2">💡 Mở link trên và nhấn nút tải trên trang mới</p>
-                    </div>
-                </div>
-            </div>
+  <div class="ad" aria-label="Vị trí quảng cáo">VỊ TRÍ QUẢNG CÁO 3 · TRƯỚC CHÂN TRANG</div>
 
-            <!-- Error Area -->
-            <div id="errorArea" class="mt-8 hidden fade-in">
-                <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-6">
-                    <h3 class="text-lg font-semibold text-red-400 mb-2">
-                        <i class="fa fa-exclamation-circle mr-2"></i>Lỗi
-                    </h3>
-                    <p id="errorText" class="text-gray-300"></p>
-                    <p class="text-xs text-gray-400 mt-3">💡 Thử mở link trực tiếp trên trang dịch vụ bên dưới nhé</p>
-                    <a href="https://cobalt.tools" target="_blank" class="inline-block mt-2 px-4 py-2 bg-indigo-600/50 rounded text-sm hover:bg-indigo-600 transition-colors">
-                        <i class="fa fa-external-link mr-1"></i>Mở Cobalt.tools
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- ⚠️ Thông tin quan trọng -->
-        <div class="glass rounded-xl p-6 mb-8 border border-yellow-500/30">
-            <h4 class="text-yellow-400 font-semibold mb-2">
-                <i class="fa fa-info-circle mr-2"></i>Vì sao xảy ra lỗi này?
-            </h4>
-            <p class="text-sm text-gray-300 mb-2">
-                Trình duyệt có cơ hội bảo mật ngăn website gọi trực tiếp đến dịch vụ khác (CORS). Đây là giới hạn của trình duyệt, không phải lỗi code.
-            </p>
-            <p class="text-sm text-gray-300">
-                ✅ <strong>Giải pháp đơn giản:</strong> Dùng nút "Mở Trang Tải Video" — bạn sẽ được chuyển đến trang Cobalt.tools, link sẽ tự động được điền sẵn, chỉ cần nhấn Tải là xong!
-            </p>
-        </div>
-
-        <!-- Features -->
-        <div class="grid md:grid-cols-3 gap-6 mb-16">
-            <div class="glass rounded-xl p-6 text-center fade-in" style="animation-delay: 0.2s;">
-                <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-indigo-500/20 flex items-center justify-center text-2xl text-indigo-400">
-                    <i class="fa fa-ban"></i>
-                </div>
-                <h3 class="text-lg font-semibold mb-2">Không Logo</h3>
-                <p class="text-sm text-gray-400">TikTok tải về hoàn toàn không có watermark</p>
-            </div>
-            <div class="glass rounded-xl p-6 text-center fade-in" style="animation-delay: 0.3s;">
-                <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-pink-500/20 flex items-center justify-center text-2xl text-pink-400">
-                    <i class="fa fa-bolt"></i>
-                </div>
-                <h3 class="text-lg font-semibold mb-2">Nhanh & Miễn Phí</h3>
-                <p class="text-sm text-gray-400">Chuyển trực tiếp đến trang tải nhanh chóng</p>
-            </div>
-            <div class="glass rounded-xl p-6 text-center fade-in" style="animation-delay: 0.4s;">
-                <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-purple-500/20 flex items-center justify-center text-2xl text-purple-400">
-                    <i class="fa fa-globe"></i>
-                </div>
-                <h3 class="text-lg font-semibold mb-2">Đa Nền Tảng</h3>
-                <p class="text-sm text-gray-400">Hỗ trợ TikTok, YouTube và nhiều nền tảng khác</p>
-            </div>
-        </div>
-
-        <!-- Guide Section -->
-        <div id="guide" class="glass rounded-2xl p-8 fade-in" style="animation-delay: 0.5s;">
-            <h3 class="text-xl font-bold mb-6 text-center">Cách Dùng TTFY.DOWN</h3>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="text-center">
-                    <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-indigo-500 flex items-center justify-center font-bold">1</div>
-                    <p class="text-sm text-gray-300">Sao chép link video TikTok hoặc YouTube bạn muốn tải</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-indigo-500 flex items-center justify-center font-bold">2</div>
-                    <p class="text-sm text-gray-300">Dán link vào ô → Nhấn "Lấy Link Tải"</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-indigo-500 flex items-center justify-center font-bold">3</div>
-                    <p class="text-sm text-gray-300">Mở trang mới → Nhấn nút Tải trên trang đó để lưu video</p>
-                </div>
-            </div>
-            
-            <div class="mt-6 p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
-                <p class="text-sm text-yellow-300">
-                    <i class="fa fa-info-circle mr-2"></i>
-                    <strong>Lưu ý:</strong> Vui lòng chỉ tải nội dung bạn có quyền sử dụng. Tải video vi phạm bản quyền là trái phép. TTFY.DOWN không lưu trữ bất kỳ video nào.
-                </p>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer id="about" class="py-8 text-center text-gray-500 text-sm mt-12">
-        <p>&copy; 2026 TTFY.DOWN. Tất cả quyền được bảo lưu.</p>
-        <p class="mt-2">TTFY.DOWN không lưu trữ bất kỳ nội dung video nào. Sử dụng hợp pháp và có trách nhiệm.</p>
-    </footer>
-
-    <script>
-        const videoLink = document.getElementById('videoLink');
-        const pasteBtn = document.getElementById('pasteBtn');
-        const downloadBtn = document.getElementById('downloadBtn');
-        const statusArea = document.getElementById('statusArea');
-        const statusText = document.getElementById('statusText');
-        const resultArea = document.getElementById('resultArea');
-        const errorArea = document.getElementById('errorArea');
-        const errorText = document.getElementById('errorText');
-        const videoTitle = document.getElementById('videoTitle');
-        const realDownloadBtn = document.getElementById('realDownloadBtn');
-
-        // Ẩn tất cả thông báo
-        function hideAllAreas() {
-            statusArea.classList.add('hidden');
-            resultArea.classList.add('hidden');
-            errorArea.classList.add('hidden');
-        }
-
-        // Nút Dán
-        pasteBtn.addEventListener('click', async () => {
-            try {
-                const text = await navigator.clipboard.readText();
-                videoLink.value = text;
-            } catch (err) {
-                videoLink.focus();
-                alert('Vui lòng thủ công dán link vào ô này nhé!');
-            }
-        });
-
-        // Nút Tải
-        downloadBtn.addEventListener('click', async () => {
-            const link = videoLink.value.trim();
-            
-            if (!link) {
-                hideAllAreas();
-                errorArea.classList.remove('hidden');
-                errorText.textContent = 'Vui lòng dán link video vào ô!';
-                return;
-            }
-
-            // Kiểm tra link hợp lệ
-            const isSupported = /tiktok\.com|youtu\.be|youtube\.com/i.test(link);
-            if (!isSupported) {
-                hideAllAreas();
-                errorArea.classList.remove('hidden');
-                errorText.textContent = 'Link không được hỗ trợ! Chỉ hỗ trợ TikTok và YouTube.';
-                return;
-            }
-
-            // Hiển thị trạng thái
-            hideAllAreas();
-            statusArea.classList.remove('hidden');
-            statusText.textContent = 'Đang chuẩn bị...';
-
-            // ⚡ Cách mới: Tạo link trực tiếp đến Cobalt với tham số, không cần gọi API
-            setTimeout(() => {
-                hideAllAreas();
-                resultArea.classList.remove('hidden');
-                videoTitle.textContent = 'Video sẽ được xử lý trên trang Cobalt';
-                
-                // Tạo link trực tiếp: https://cobalt.tools/?url=[link_video]
-                const targetUrl = `https://cobalt.tools/?url=${encodeURIComponent(link)}`;
-                realDownloadBtn.href = targetUrl;
-            }, 800);
-        });
-    </script>
+  <section id="about" class="section">
+    <h2>Câu hỏi thường gặp</h2>
+    <div class="faq"><strong>Có thể tải mọi video không?</strong><span>Không. Quyền truy cập phụ thuộc nền tảng, quyền sở hữu, cài đặt riêng tư và API được cấp.</span></div>
+    <div class="faq"><strong>Trang có cần mật khẩu TikTok/Facebook/Google không?</strong><span>Không nên yêu cầu người dùng gửi mật khẩu. Nếu cần xác thực, hãy dùng luồng OAuth chính thức.</span></div>
+    <div class="faq"><strong>Vì sao một số liên kết không xử lý được?</strong><span>Video riêng tư, bị giới hạn khu vực, bản quyền hoặc nền tảng không cấp quyền API có thể không được hỗ trợ.</span></div>
+  </section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 LinkMate · Công cụ liên kết video</span><span>Chỉ sử dụng nội dung hợp pháp và được cho phép.</span></div></footer>
+<script>
+const buttons=[...document.querySelectorAll('.platform')];
+let platform='tiktok';
+buttons.forEach(btn=>btn.addEventListener('click',()=>{
+  platform=btn.dataset.platform;
+  buttons.forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));
+}));
+const input=document.getElementById('videoUrl');
+const statusBox=document.getElementById('status');
+document.getElementById('pasteBtn').addEventListener('click',async()=>{
+  try{input.value=await navigator.clipboard.readText();input.focus();}
+  catch{status('Trình duyệt chưa cho phép đọc clipboard. Hãy nhấn giữ và chọn Dán.',true);}
+});
+function status(message,warning=false){statusBox.textContent=message;statusBox.style.background=warning?'#fff4e8':'#eef8f1';statusBox.style.color=warning?'#80520d':'#24623c';statusBox.classList.add('show');}
+function detectPlatform(url){
+  try{
+    const host=new URL(url).hostname.toLowerCase().replace(/^www\./,'');
+    if(host==='tiktok.com'||host.endsWith('.tiktok.com'))return 'tiktok';
+    if(host==='facebook.com'||host.endsWith('.facebook.com')||host==='fb.watch')return 'facebook';
+    if(host==='youtube.com'||host.endsWith('.youtube.com')||host==='youtu.be')return 'youtube';
+  }catch{}
+  return null;
+}
+document.getElementById('submitBtn').addEventListener('click',async()=>{
+  const url=input.value.trim(), detected=detectPlatform(url);
+  if(!detected){status('Liên kết chưa hợp lệ hoặc không thuộc TikTok, Facebook hay YouTube.',true);return;}
+  if(detected!==platform){status('Liên kết này thuộc '+detected+'. Hãy chọn đúng nền tảng ở phía trên.',true);return;}
+  // TODO: Replace this with your own secure backend endpoint.
+  // Never put private API keys in this front-end file.
+  status('Giao diện đã nhận diện liên kết '+platform+'. Để xử lý thật, hãy kết nối endpoint máy chủ /api/resolve. Hiện endpoint chưa được cấu hình.',true);
+});
+</script>
 </body>
 </html>
