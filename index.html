@@ -108,13 +108,55 @@ function detectPlatform(url){
   }catch{}
   return null;
 }
-document.getElementById('submitBtn').addEventListener('click',async()=>{
-  const url=input.value.trim(), detected=detectPlatform(url);
-  if(!detected){status('Liên kết chưa hợp lệ hoặc không thuộc TikTok, Facebook hay YouTube.',true);return;}
-  if(detected!==platform){status('Liên kết này thuộc '+detected+'. Hãy chọn đúng nền tảng ở phía trên.',true);return;}
-  // TODO: Replace this with your own secure backend endpoint.
-  // Never put private API keys in this front-end file.
-  status('Giao diện đã nhận diện liên kết '+platform+'. Để xử lý thật, hãy kết nối endpoint máy chủ /api/resolve. Hiện endpoint chưa được cấu hình.',true);
+const API_URL = "https://ttfy-backend.dangdntn8.workers.dev/api/resolve";
+
+document.getElementById('submitBtn').addEventListener('click', async () => {
+  const url = input.value.trim();
+  const detected = detectPlatform(url);
+  const button = document.getElementById('submitBtn');
+
+  if (!detected) {
+    status('Liên kết chưa hợp lệ hoặc không thuộc TikTok, Facebook hay YouTube.', true);
+    return;
+  }
+
+  if (detected !== platform) {
+    status('Liên kết này thuộc ' + detected + '. Hãy chọn đúng nền tảng.', true);
+    return;
+  }
+
+  button.disabled = true;
+  button.textContent = 'Đang kiểm tra...';
+
+  try {
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ url: url })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok || !data.success) {
+      throw new Error(data.message || 'Không thể kiểm tra liên kết.');
+    }
+
+    status(
+      'Kết nối máy chủ thành công! Đã nhận diện nền tảng: ' +
+      data.platform.toUpperCase() +
+      '. Đây mới là bước kiểm tra liên kết, chưa tải video.',
+      false
+    );
+
+  } catch (error) {
+    status('Lỗi kết nối: ' + error.message, true);
+
+  } finally {
+    button.disabled = false;
+    button.textContent = 'Kiểm tra liên kết';
+  }
 });
 </script>
 </body>
